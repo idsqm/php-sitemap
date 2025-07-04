@@ -1,0 +1,21 @@
+{
+    "name": "idsqm/php-sitemap",
+    "description": "Simple sitemap generator",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Idsqm\\Sitemap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Андрей Хузахметов",
+            "email": "andruho978@gmail.com"
+        }
+    ],
+    "require": {
+      "php": ">=8.1",
+      "nesbot/carbon": "^3.10"
+    }
+}
