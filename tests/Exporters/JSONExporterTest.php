@@ -26,7 +26,7 @@ class JSONExporterTest extends ExporterTestCase
     ]
 ';
 
-    public function testJsonSitemapExport()
+    public function testJsonSitemapExport(): void
     {
         $exporter = new JSONExporter();
 

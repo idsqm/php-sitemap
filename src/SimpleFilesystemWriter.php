@@ -2,6 +2,7 @@
 
 namespace Idsqm\Sitemap;
 
+use Exception;
 use InvalidArgumentException;
 use RuntimeException;
 use Throwable;
@@ -16,6 +17,10 @@ class SimpleFilesystemWriter implements FilesystemWriter
 
         try {
             $file = fopen($location, 'x');
+
+            if (!$file) {
+                throw new Exception('Unable to open file');
+            }
         } catch (Throwable $e) {
             throw new RuntimeException('Unable to open file \'' . $location . '\' to write.', previous: $e);
         }

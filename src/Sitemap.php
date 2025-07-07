@@ -8,7 +8,7 @@ class Sitemap
 {
     public const MAX_SITEMAP_RECORD_COUNT = 50000;
 
-    private string $baseUrl;
+    private string $baseUrl; /* @phpstan-ignore property.onlyWritten */
 
     /** @var SitemapRecord[] $records */
     private array $records;

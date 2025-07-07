@@ -33,7 +33,7 @@ class CSVExporter implements SitemapExporter
         $recordString = $loc . ';';
         $recordString .= $lastMod . ';';
         $recordString .= $priority . ';';
-        $recordString .= $changeFreq?->value ?? '';
+        $recordString .= $changeFreq->value ?? '';
 
         return $recordString;
     }

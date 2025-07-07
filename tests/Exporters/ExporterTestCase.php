@@ -19,7 +19,7 @@ class ExporterTestCase extends TestCase
         ]);
     }
 
-    protected function removeWhiteSpaces(string $string): string
+    protected function removeWhiteSpaces(string $string): string|null
     {
         return preg_filter('/\s+/', '', $string);
     }

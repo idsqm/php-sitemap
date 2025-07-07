@@ -14,6 +14,9 @@ use ValueError;
 
 class SitemapRecordTest extends TestCase
 {
+    /**
+     * @return array{array{string, CarbonInterface|string|null, Freq|string|null, float|null}}
+     */
     public static function constructorDataProvider(): array
     {
         return [
@@ -38,6 +41,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{CarbonInterface|string|null}}
+     */
     public static function lastModDataProvider(): array
     {
         return [
@@ -51,6 +57,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{mixed}}
+     */
     public static function incorrectLastModDataProvider(): array
     {
         return [
@@ -58,6 +67,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{Freq|string|null}}
+     */
     public static function changeFreqDataProvider(): array
     {
         return [
@@ -72,6 +84,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{mixed}}
+     */
     public static function incorrectChangeFreqDataProvider(): array
     {
         return [
@@ -79,6 +94,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{float|null}}
+     */
     public static function priorityDataProvider(): array
     {
         return [
@@ -97,6 +115,9 @@ class SitemapRecordTest extends TestCase
         ];
     }
 
+    /**
+     * @return array{array{mixed}}
+     */
     public static function incorrectPriorityDataProvider(): array
     {
         return [

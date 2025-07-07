@@ -2,6 +2,7 @@
 
 namespace Idsqm\Sitemap;
 
+use Carbon\Carbon;
 use InvalidArgumentException;
 use TypeError;
 
@@ -19,7 +20,7 @@ class SitemapGenerator
 
     /**
      * @param string $baseUrl
-     * @param array $urls
+     * @param array{array{loc: string, lastmod: Carbon|string|null, changefreq: Freq|string|null, priority: float|null}} $urls
      * @param string $extension
      * @param string $outputFilePath
      * @param FilesystemWriter $fsWriter
@@ -83,7 +84,7 @@ class SitemapGenerator
     }
 
     /**
-     * @param array $urls
+     * @param array{array{loc: string, lastmod: Carbon|string|null, changefreq: Freq|string|null, priority: float|null}} $urls
      * @return Sitemap
      * @throws InvalidArgumentException
      */

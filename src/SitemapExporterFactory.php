@@ -10,6 +10,7 @@ use InvalidArgumentException;
 
 class SitemapExporterFactory
 {
+    /** @var array<string, Closure(mixed...): SitemapExporter> $exporters */
     private static array $exporters = [];
 
     /**

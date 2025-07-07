@@ -12,6 +12,9 @@ class SitemapTest extends TestCase
 {
     private const URL = 'https://test.test/';
 
+    /**
+     * @return array{array{SitemapRecord[]}}
+     */
     public static function recordDataProvider(): array
     {
         return [
@@ -51,6 +54,7 @@ class SitemapTest extends TestCase
 
         $records = array_fill(0, Sitemap::MAX_SITEMAP_RECORD_COUNT + 1, ' ');
 
+        /** @phpstan-ignore argument.type */
         new Sitemap(self::URL, $records);
     }
 }

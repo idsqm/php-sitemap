@@ -34,6 +34,9 @@ class SitemapGeneratorTest extends TestCase
         SitemapExporterFactory::unRegister(self::EXTENSION);
     }
 
+    /**
+     * @return array{array{array{array{loc: string, lastmod: Carbon|string|null, changefreq: Freq|string|null, priority: float|null}}}}
+     */
     public static function urlsDataProviders(): array
     {
         return [
@@ -51,6 +54,10 @@ class SitemapGeneratorTest extends TestCase
         ];
     }
 
+    /**
+     * @param array{array{loc: string, lastmod: Carbon|string|null, changefreq: Freq|string|null, priority: float|null}} $urls
+     * @return void
+     */
     #[DataProvider('urlsDataProviders')]
     public function testSiteMapGenerator(array $urls): void
     {
@@ -91,6 +98,7 @@ class SitemapGeneratorTest extends TestCase
     {
         $this->expectException(TypeError::class);
 
+        /** @phpstan-ignore argument.type */
         $generator = new SitemapGenerator(self::URL, [], self::EXTENSION, self::FILENAME, $this->mockFileSystemWriter());
 
         $generator->setExporter(fn() => '');
@@ -103,6 +111,7 @@ class SitemapGeneratorTest extends TestCase
         $this->expectException(invalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported sitemap extension: ' . $extension);
 
+        /** @phpstan-ignore argument.type */
         $generator = new SitemapGenerator(self::URL, [], self::EXTENSION, self::FILENAME, $this->mockFileSystemWriter());
 
         $generator->setExporter($extension);
